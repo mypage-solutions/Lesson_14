@@ -36,9 +36,10 @@ public class PersonFactory {
         PersonFactory personList = new PersonFactory();
         personList.addPersons(100);
         System.out.println(personList.persons);
-        System.out.println(personList.removeDuplicates(personList.persons));
+        List<Person> listWithoutDuplicates = personList.removeDuplicates(personList.persons);
+        System.out.println(listWithoutDuplicates);
         System.out.println("Original list size: " + personList.persons.size());
-        System.out.println("List size after removing duplicates: " + personList.removeDuplicates(personList.persons).size());
+        System.out.println("List size after removing duplicates: " + listWithoutDuplicates.size());
 
     }
 }
