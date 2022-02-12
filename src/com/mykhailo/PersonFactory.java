@@ -27,7 +27,7 @@ public class PersonFactory {
     }
 
     public List<Person> removeDuplicates(List<Person> list) {
-        Set<Person> temp = new HashSet<>(list);
+        Set<Person> temp = new LinkedHashSet<>(list);
         return new ArrayList<>(temp);
     }
 
