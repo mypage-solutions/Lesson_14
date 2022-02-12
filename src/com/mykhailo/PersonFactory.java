@@ -1,8 +1,6 @@
 package com.mykhailo;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class PersonFactory {
 
@@ -10,7 +8,7 @@ public class PersonFactory {
     public static final String[] FIRST_NAME = {"Jack", "James", "Noah", "Daniel", "Conor", "Finn", "Harry", "Charlie"};
     public static final String[] LAST_NAME = {"Duffy", "Brown", "Ryan", "Lynch", "Collins", "Quinn", "Walsh", "Connor"};
 
-    private List<Person> persons = new ArrayList<>();
+    private final List<Person> persons = new ArrayList<>();
 
     public void addPersons(int number) {
 
@@ -22,10 +20,15 @@ public class PersonFactory {
             //  The formula is BMI = kg/m2 where kg is a person's weight in kilograms and m2 is their height in metres squared.
             //  A BMI of 25.0 or more is overweight, while the healthy range is 18.5 to 24.9.
             int bmi = RANDOM.nextInt(13) + 18;
-            double weight = Math.round(Math.pow(height / 100d, 2) * bmi * 100)/ 100d;
+            double weight = Math.round(Math.pow(height / 100d, 2) * bmi * 100) / 100d;
             Person person = new Person(firstName, lastName, age, height, weight);
             persons.add(person);
         }
+    }
+
+    public List<Person> removeDuplicates(List<Person> list) {
+        Set<Person> temp = new HashSet<>(list);
+        return new ArrayList<>(temp);
     }
 
     public static void main(String[] args) {
@@ -33,6 +36,9 @@ public class PersonFactory {
         PersonFactory personList = new PersonFactory();
         personList.addPersons(100);
         System.out.println(personList.persons);
+        System.out.println(personList.removeDuplicates(personList.persons));
+        System.out.println("Original list size: " + personList.persons.size());
+        System.out.println("List size after removing duplicates: " + personList.removeDuplicates(personList.persons).size());
 
     }
 }
