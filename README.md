@@ -27,6 +27,17 @@ Java Collections can achieve all the operations that you perform on a data such 
   <img src="https://github.com/mypage-solutions/Images/blob/main/Images/Collection-framework.jpeg" />
 </p>
 
+### Difference between Final, Finally and Finalize.
+#### Final
+**final** is a keyword that is used to apply restrictions on a class, method, or variable.
+- The class with this keyword cannot be inherited.
+- The method with this keyword cannot be overridden.
+- The variable with this keyword cannot be changed.
+#### Finally
+In Java, **finally** is a block used to place important code that will be executed whether or not an exception is handled.
+#### Finalize
+**finalize()** is used to perform clean-up processing just before the object is collected by the garbage collector. In Java, the finalize method in a class is used for freeing up the heap’s memory, just like destructors in C++.
+
 ## Technologies Used
 
 - Java.
